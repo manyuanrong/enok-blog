@@ -4,6 +4,7 @@ node_js:
 
 services:
   - mysql
+  - docker
   - redis-server
   
 cache:
