@@ -5,7 +5,8 @@ node_js:
 cache:
   yarn: true
   directories:
-    - "node_modules"
+    - "/web/node_modules"
+    - "/server/node_modules"
 
 addons:
   ssh_known_hosts: 114.215.29.157
