@@ -7,8 +7,10 @@ cache:
   directories:
     - "node_modules"
 
+addons:
+  ssh_known_hosts: 114.215.29.157
+
 before_install:
-  - mkdir -p ~/.ssh
   - openssl aes-256-cbc -K $encrypted_6c4c412cdcb9_key -iv $encrypted_6c4c412cdcb9_iv -in id_rsa.enc -out ~/.ssh/id_rsa -d
   
 script:
@@ -21,4 +23,4 @@ script:
   - docker push fengmu456/enok-blog
 
 after_success:
-  - ssh $DEPLOY_HOST "source /etc/profile;/data/travis/enok-blog.sh"
+  - ssh root@114.215.29.157 "source /etc/profile;/data/travis/enok-blog.sh"
