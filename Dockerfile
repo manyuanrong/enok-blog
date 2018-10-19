@@ -1,6 +1,6 @@
 FROM node:8
 
-RUN env $DB_HOST
+RUN echo $DB_HOST
 
 ENV DB_HOST $DB_HOST
 ENV DB_PORT $DB_PORT
