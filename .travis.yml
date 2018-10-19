@@ -7,4 +7,4 @@ cache:
   
 script:
   - cd web
-  - yarn build
+  - yarn & yarn build
