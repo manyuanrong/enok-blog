@@ -8,8 +8,6 @@ ENV REDIS_HOST $REDIS_HOST
 ENV REDIS_PORT $REIDS_PORT
 ENV REDIS_PASS $REIDS_PASS
 
-RUN env & echo ${DB_HOST} & echo $DB_HOST
-
 WORKDIR /app-root
 COPY ./server /app-root
 COPY ./web/build/ /app-root/app/public/
