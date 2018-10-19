@@ -2,8 +2,6 @@ import {EggAppConfig, EggAppInfo, PowerPartial} from 'egg';
 
 export default (appInfo: EggAppInfo) => {
 
-    console.log(process.env);
-
     const config = {} as PowerPartial<EggAppConfig>;
 
     config.keys = appInfo.name + '_1537772862603_2420';

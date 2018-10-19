@@ -49,7 +49,7 @@ export default class extends Controller {
                 },
             });
             const args = result.data.split('&');
-            const arg: [] = args[0].split('=');
+            const arg = args[0].split('=');
             const accessToken = arg[1];
             url = `https://api.github.com/user?access_token=${accessToken}`;
             const info = (await this.ctx.curl(url, {dataType: 'json'})).data;
@@ -86,7 +86,7 @@ export default class extends Controller {
                 contentType: 'application/json',
             });
             const args = result.data.split('&');
-            const arg: [] = args[0].split('=');
+            const arg = args[0].split('=');
             const accessToken = arg[1];
 
             url = `https://graph.qq.com/oauth2.0/me?access_token=${accessToken}`;
