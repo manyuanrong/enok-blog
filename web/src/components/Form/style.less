@@ -1,0 +1,37 @@
+.com-form-input {
+  display: flex;
+  padding: 10px;
+  width: 100%;
+  align-items: center;
+  flex-direction: row;
+  flex: 1;
+  span {
+    font-size: 16px;
+    display: inline-block;
+    margin-right: 20px;
+  }
+  input[type=text], textarea {
+    border: 1px solid #ddd;
+    flex: 1;
+    padding: 10px;
+    font-size: 14px;
+  }
+  input[type=file] {
+    display: block;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    cursor: pointer;
+  }
+  .upload {
+    display: inline-block;
+    position: relative;
+    height: 39px;
+    border: 1px solid #ddd;
+    width: 80px;
+    border-left: none;
+  }
+}

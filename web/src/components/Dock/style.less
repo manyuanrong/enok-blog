@@ -1,0 +1,64 @@
+.com-dock {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  ul {
+    height: 80px;
+    margin: 0;
+    padding: 0;
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 8px 8px 0 0;
+    box-shadow: #666 0 0 5px 0;
+    display: flex;
+    li {
+      width: 60px;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      position: relative;
+      &:hover {
+        span {
+          display: block;
+        }
+      }
+      .icon {
+        height: 60px;
+        width: 60px;
+        background: no-repeat center;
+        background-size: contain;
+      }
+      span {
+        position: absolute;
+        top: -50px;
+        white-space: nowrap;
+        background: rgba(255, 255, 255, 0.6);
+        color: #333;
+        padding: 5px 10px;
+        border-radius: 5px;
+        font-size: 14px;
+        box-sizing: border-box;
+        display: none;
+        &:after {
+          display: block;
+          position: absolute;
+          left: 50%;
+          transform: translateX(-50%);
+          bottom: -8px;
+          content: "";
+          width: 0;
+          height: 0;
+          border-top: 8px rgba(255, 255, 255, .6) solid;
+          border-bottom: 0;
+          border-left: 8px transparent solid;
+          border-right: 8px transparent solid;
+        }
+      }
+    }
+  }
+}
