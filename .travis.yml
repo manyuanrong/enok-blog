@@ -2,23 +2,13 @@ language: node_js
 node_js:
   - "8"
   
-env:
-  - DB_HOST=$DB_HOST 
-
-services:
-  - mysql
-  - redis-server
-  
 cache:
   yarn: true
   
-before_install:
-  - mysql -e 'CREATE DATABASE IF NOT EXISTS test;'
-  
 script:
-  #- cd web
-  #- yarn
-  #- yarn build
-  #- cd ../
-  - docker build ./ -t registry.cn-hangzhou.aliyuncs.com/manyuanrong-public/enok-blog --network host
+  - cd web
+  - yarn
+  - yarn build
+  - cd ../
+  - docker build ./ -t registry.cn-hangzhou.aliyuncs.com/manyuanrong-public/enok-blog
   - docker push registry.cn-hangzhou.aliyuncs.com/manyuanrong-public/enok-blog
