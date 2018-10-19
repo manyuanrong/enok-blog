@@ -10,5 +10,6 @@ script:
   - yarn
   - yarn build
   - cd ../
-  - docker build ./ -t registry.cn-hangzhou.aliyuncs.com/manyuanrong-public/enok-blog
-  - docker push registry.cn-hangzhou.aliyuncs.com/manyuanrong-public/enok-blog
+  - docker build ./ -t fengmu456/enok-blog
+  - docker login -u $DOCKER_USER -p $DOCKER_PASS
+  - docker push fengmu456/enok-blog
