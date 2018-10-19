@@ -1,0 +1,14 @@
+language: node_js
+node_js:
+  - "8"
+  
+cache:
+  yarn: true
+  
+script:
+  - cd web
+  - yarn
+  - yarn build
+  - cd ../
+  - docker build ./ -t registry.cn-hangzhou.aliyuncs.com/manyuanrong-public/enok-blog
+  - docker push registry.cn-hangzhou.aliyuncs.com/manyuanrong-public/enok-blog
