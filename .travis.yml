@@ -15,9 +15,9 @@ before_install:
   
 script:
   - env
-  - cd web
-  - yarn
-  - yarn build
+  #- cd web
+  #- yarn
+  #- yarn build
   - cd ../
-  - docker build ./ -t registry.cn-hangzhou.aliyuncs.com/manyuanrong-public/enok-blog
+  - docker build ./ -t registry.cn-hangzhou.aliyuncs.com/manyuanrong-public/enok-blog --network host
   - docker push registry.cn-hangzhou.aliyuncs.com/manyuanrong-public/enok-blog
