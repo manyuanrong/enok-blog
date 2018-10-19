@@ -14,6 +14,7 @@ before_install:
   - mysql -e 'CREATE DATABASE IF NOT EXISTS test;'
   
 script:
+  - env
   - cd web
   - yarn
   - yarn build
