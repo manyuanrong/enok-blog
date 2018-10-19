@@ -5,8 +5,8 @@ node_js:
 cache:
   yarn: true
   directories:
-    - "/web/node_modules"
-    - "/server/node_modules"
+    - "web/node_modules"
+    - "server/node_modules"
 
 addons:
   ssh_known_hosts: 114.215.29.157
@@ -19,6 +19,9 @@ script:
   - cd web
   - yarn
   - yarn build
+  - cd ../server
+  - yarn
+  - yarn ci
   - cd ../
   - docker build ./ -t fengmu456/enok-blog
   - docker login -u $DOCKER_USER -p $DOCKER_PASS
