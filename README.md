@@ -2,8 +2,13 @@
 [![Build Status](https://www.travis-ci.org/manyuanrong/enok-blog.svg?branch=master)](https://www.travis-ci.org/manyuanrong/enok-blog)
 
 #### 项目介绍
+
 EnokBlog 博客系统是一款仿真Mac电脑桌面的多窗口博客系统。
+
+效果参考我的网站 https://www.manyuanrong.cn/
+
 #### 技术选型
+
 * 前后端均使用 TypeScript
 * 服务端使用 Node.js + Egg.js 构建
 * 前端使用 Webpack + React.js 构建
@@ -11,6 +16,7 @@ EnokBlog 博客系统是一款仿真Mac电脑桌面的多窗口博客系统。
 * 缓存使用 Redis
 
 #### 目录说明
+
 ```shell
 ├── Dockerfile // Docker镜像构建文件
 ├── LICENSE
@@ -45,11 +51,52 @@ EnokBlog 博客系统是一款仿真Mac电脑桌面的多窗口博客系统。
     └── yarn.lock
 ```
 
-#### 安装教程
+## 安装教程
 
-1. xxxx
-2. xxxx
-3. xxxx
+#### Docker
+
+```shell
+docker run -d --name enok-blog \
+	-e DB_HOST=数据库地址 \
+    -e DB_USER=数据库用户名 \
+    -e DB_PASS=数据库密码 \
+    -e DB_NAME=数据库名 \
+	-e OSS_BUCKET=OssBucket名 \
+    -e OSS_ENDPOINT=OssEndpoint \
+    -e OSS_SECRET=OssSecret \
+    -e OSS_KEY=OssKey \
+	-e REDIS_HOST=Redis服务器地址 \
+    -e REDIS_PORT=Redis端口默认6379 \
+    -e REDIS_PASS=Redis密码 \
+	-e GITHUB_ID=GithubClientId \
+    -e GITHUB_SECRET=GithubClientSecret \
+	-e QQ_REDIRECT_URI=你的域名/api/user/login/qq \
+    -e QQ_ID=QQ互联应用ID \
+    -e QQ_SECRET=QQ互联应用Secret \
+    -p 80:80 fengmu456/enok-blog
+```
+
+** -e ** 用于设置环境变量，具体环境变量参考如下
+
+| 环境变量名 | 说明 |
+| ---- | ---- |
+| DB_HOST | 数据库地址 |
+| DB_USER | 数据库用户名 |
+| DB_PASS | 数据库密码 |
+| DB_PORT | 数据库端口，默认3306 |
+| DB_NAME | 数据库名 |
+| OSS_BUCKET | Oss Bucket名 |
+| OSS_ENDPOINT | Oss Endpoint |
+| OSS_SECRET | Oss Secret |
+| OSS_KEY | Oss Key |
+| REDIS_HOST | Redis服务器地址 |
+| REDIS_PORT | Redis端口默认6379 |
+| REDIS_PASS | Redis密码 |
+| GITHUB_ID | Github ClientId |
+| GITHUB_SECRET | Github ClientSecret |
+| QQ_REDIRECT_URI | QQ登录回调，格式为 http(s)://你的域名/api/user/login/qq |
+| QQ_ID | QQ互联应用ID |
+| QQ_SECRET | QQ互联应用Secret |
 
 #### 使用说明
 
@@ -63,13 +110,3 @@ EnokBlog 博客系统是一款仿真Mac电脑桌面的多窗口博客系统。
 2. 新建 Feat_xxx 分支
 3. 提交代码
 4. 新建 Pull Request
-
-
-#### 码云特技
-
-1. 使用 Readme\_XXX.md 来支持不同的语言，例如 Readme\_en.md, Readme\_zh.md
-2. 码云官方博客 [blog.gitee.com](https://blog.gitee.com)
-3. 你可以 [https://gitee.com/explore](https://gitee.com/explore) 这个地址来了解码云上的优秀开源项目
-4. [GVP](https://gitee.com/gvp) 全称是码云最有价值开源项目，是码云综合评定出的优秀开源项目
-5. 码云官方提供的使用手册 [https://gitee.com/help](https://gitee.com/help)
-6. 码云封面人物是一档用来展示码云会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
