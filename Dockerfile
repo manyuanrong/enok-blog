@@ -1,7 +1,8 @@
-FROM node:8
+FROM fengmu456/nginx-node
 
 WORKDIR /app-root
 COPY ./server /app-root
-COPY ./web/build/ /app-root/app/public/
+COPY ./web/build/ /usr/share/nginx/html/
+COPY ./nginx.conf /etc/nginx/conf.d/default.conf
 
 CMD [ "yarn", "start" ]
