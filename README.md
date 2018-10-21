@@ -7,6 +7,8 @@ EnokBlog 博客系统是一款仿真Mac电脑桌面的多窗口博客系统。
 
 效果参考我的网站 https://www.manyuanrong.cn/
 
+![Build Status](https://data.manyuanrong.cn/upload/1540036989393.jpeg)
+
 #### 技术选型
 
 * 前后端均使用 TypeScript
@@ -58,25 +60,25 @@ EnokBlog 博客系统是一款仿真Mac电脑桌面的多窗口博客系统。
 ```shell
 docker run -d --name enok-blog \
 	-e DB_HOST=数据库地址 \
-    -e DB_USER=数据库用户名 \
-    -e DB_PASS=数据库密码 \
-    -e DB_NAME=数据库名 \
+	-e DB_USER=数据库用户名 \
+	-e DB_PASS=数据库密码 \
+	-e DB_NAME=数据库名 \
 	-e OSS_BUCKET=OssBucket名 \
-    -e OSS_ENDPOINT=OssEndpoint \
-    -e OSS_SECRET=OssSecret \
-    -e OSS_KEY=OssKey \
+	-e OSS_ENDPOINT=OssEndpoint \
+	-e OSS_SECRET=OssSecret \
+	-e OSS_KEY=OssKey \
 	-e REDIS_HOST=Redis服务器地址 \
-    -e REDIS_PORT=Redis端口默认6379 \
-    -e REDIS_PASS=Redis密码 \
+	-e REDIS_PORT=Redis端口默认6379 \
+	-e REDIS_PASS=Redis密码 \
 	-e GITHUB_ID=GithubClientId \
-    -e GITHUB_SECRET=GithubClientSecret \
+	-e GITHUB_SECRET=GithubClientSecret \
 	-e QQ_REDIRECT_URI=你的域名/api/user/login/qq \
-    -e QQ_ID=QQ互联应用ID \
-    -e QQ_SECRET=QQ互联应用Secret \
-    -p 80:80 fengmu456/enok-blog
+	-e QQ_ID=QQ互联应用ID \
+	-e QQ_SECRET=QQ互联应用Secret \
+	-p 80:80 fengmu456/enok-blog
 ```
 
-** -e ** 用于设置环境变量，具体环境变量参考如下
+**-e** 用于设置环境变量，具体环境变量参考如下
 
 | 环境变量名 | 说明 |
 | ---- | ---- |
