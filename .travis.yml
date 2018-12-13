@@ -4,11 +4,28 @@ node_js:
   
 cache:
   yarn: true
+  directories:
+    - "web/node_modules"
+    - "server/node_modules"
+
+addons:
+  ssh_known_hosts: 114.215.29.157
+
+before_install:
+  - openssl aes-256-cbc -K $encrypted_6c4c412cdcb9_key -iv $encrypted_6c4c412cdcb9_iv -in id_rsa.enc -out ~/.ssh/id_rsa -d
+  - chmod 600 ~/.ssh/id_rsa
   
 script:
   - cd web
   - yarn
   - yarn build
+  - cd ../server
+  - yarn
+  - yarn ci
   - cd ../
-  - docker build ./ -t registry.cn-hangzhou.aliyuncs.com/manyuanrong-public/enok-blog
-  - docker push registry.cn-hangzhou.aliyuncs.com/manyuanrong-public/enok-blog
+  - docker build ./ -t fengmu456/enok-blog
+  - docker login -u $DOCKER_USER -p $DOCKER_PASS
+  - docker push fengmu456/enok-blog
+
+after_success:
+  - ssh root@114.215.29.157 "source /etc/profile;/data/travis/enok-blog.sh"

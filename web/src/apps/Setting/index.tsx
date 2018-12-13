@@ -4,13 +4,20 @@ import AppWindow from "../../components/AppWindow";
 import ImageSetting from "./image";
 import "./style.less";
 
-const pages = [{
-    title: "文章管理",
-    component: require("./article").default,
-}, {
-    title: "照片管理",
-    component: ImageSetting,
-}];
+const pages = [
+    {
+        title: "文章分类管理",
+        component: require("./article-tags").default,
+    },
+    {
+        title: "文章管理",
+        component: require("./article").default,
+    },
+    {
+        title: "照片管理",
+        component: ImageSetting,
+    }
+];
 
 export default class SettingApp extends AppWindow {
 

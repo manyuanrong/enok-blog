@@ -7,7 +7,7 @@
       "jsx-double"
     ],
     "no-console": [
-      true,
+      false,
       "dir",
       "log",
       "error",

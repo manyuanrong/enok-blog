@@ -1,9 +1,9 @@
-FROM registry.cn-hangzhou.aliyuncs.com/aliyun-node/alinode:3.11.0
+FROM fengmu456/nginx-node
 
 WORKDIR /app-root
 COPY ./server /app-root
-COPY ./web/build/ /app-root/app/public/
-RUN yarn
-RUN yarn ci
+COPY ./web/build/ /usr/share/nginx/html/
+COPY ./nginx.conf /etc/nginx/conf.d/default.conf
+COPY ./startup.sh /app-root/
 
-CMD [ "yarn", "start" ]
+CMD [ "/app-root/startup.sh" ]
