@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.18.1",
     "codemirror": "^5.40.2",
     "highlight.js": "^9.13.0",
     "mobx": "^5.1.0",
