@@ -5,7 +5,7 @@
   "dependencies": {
     "axios": "^0.18.0",
     "codemirror": "^5.40.2",
-    "highlight.js": "^9.13.0",
+    "highlight.js": "^10.1.2",
     "mobx": "^5.1.0",
     "mobx-react": "^5.2.8",
     "mobx-react-router": "^4.0.5",
